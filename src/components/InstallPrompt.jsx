@@ -4,7 +4,6 @@
 export default function InstallPrompt() {
   return (
     <div style={{
-      minHeight: '100vh',
       minHeight: '100dvh',
       background: 'linear-gradient(160deg, #1e0205 0%, #0e0812 50%, #0a0814 100%)',
       display: 'flex',

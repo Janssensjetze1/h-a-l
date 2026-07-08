@@ -141,7 +141,6 @@ export default function Navbar() {
         paddingTop: 'env(safe-area-inset-top)',
         borderBottom: '1px solid rgba(184,115,51,0.08)',
         height: 'calc(88px + env(safe-area-inset-top))',
-        position: 'sticky',
       }}>
         <div style={{
           height: '88px',
