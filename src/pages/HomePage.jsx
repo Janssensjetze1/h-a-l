@@ -59,6 +59,49 @@ export default function HomePage() {
         </h1>
       </div>
 
+      {/* Vondst melden */}
+      <div style={{ padding: '12px 14px 0' }}>
+        <a
+          href="https://h-a-l.be"
+          target="_blank"
+          rel="noopener noreferrer"
+          style={{
+            display: 'flex', alignItems: 'center', justifyContent: 'space-between',
+            textDecoration: 'none',
+            background: 'linear-gradient(135deg, #b87333 0%, #7c4b1f 100%)',
+            borderRadius: '14px',
+            padding: '16px 18px',
+            boxShadow: '0 4px 16px rgba(184,115,51,0.3)',
+          }}
+          onTouchStart={e => e.currentTarget.style.opacity = '0.85'}
+          onTouchEnd={e => e.currentTarget.style.opacity = '1'}
+        >
+          <div style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+            <div style={{
+              width: '38px', height: '38px', borderRadius: '10px',
+              background: 'rgba(255,255,255,0.2)',
+              display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0,
+            }}>
+              <svg width="20" height="20" fill="none" stroke="white" strokeWidth="2" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.244-4.243a8 8 0 1111.314 0z" />
+                <path strokeLinecap="round" strokeLinejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z" />
+              </svg>
+            </div>
+            <div>
+              <p style={{ fontSize: '15px', fontWeight: '800', color: 'white', margin: '0 0 2px', letterSpacing: '-0.2px' }}>
+                Vondst melden
+              </p>
+              <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.7)', margin: 0 }}>
+                Registreer via h-a-l.be
+              </p>
+            </div>
+          </div>
+          <svg width="16" height="16" fill="none" stroke="rgba(255,255,255,0.7)" strokeWidth="2.5" viewBox="0 0 24 24">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+          </svg>
+        </a>
+      </div>
+
       {/* Categorieën */}
       <section style={{ padding: '20px 14px 0' }}>
         <p style={{
