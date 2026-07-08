@@ -1,4 +1,5 @@
 import { Routes, Route, Navigate } from 'react-router-dom'
+import { useState, useEffect } from 'react'
 import { useAuth } from './context/AuthContext'
 import { useIsMobile } from './hooks/useIsMobile'
 import { NavProvider } from './context/NavContext'
@@ -29,14 +30,8 @@ function DesktopApp() {
   const { user, isAdmin, loading } = useAuth()
 
   if (loading) return <DesktopLoader />
-
-  // Niet ingelogd → login
   if (!user) return <DesktopLogin />
-
-  // Ingelogd maar geen admin → foutmelding
   if (!isAdmin) return <DesktopNotAllowed />
-
-  // Admin → beheerpaneel
   return <DesktopAdmin />
 }
 
@@ -63,9 +58,20 @@ function DesktopNotAllowed() {
 // ── Mobile flow ─────────────────────────────────────────────────────────────
 function MobileApp() {
   const { loading } = useAuth()
+  const [deferredPrompt, setDeferredPrompt] = useState(null)
 
-  // In Safari (niet als PWA) → installatie-instructie tonen
-  if (!isRunningAsPWA()) return <InstallPrompt />
+  // Vang het Android Chrome installatie-event op zodra het beschikbaar is
+  useEffect(() => {
+    const handler = (e) => {
+      e.preventDefault()
+      setDeferredPrompt(e)
+    }
+    window.addEventListener('beforeinstallprompt', handler)
+    return () => window.removeEventListener('beforeinstallprompt', handler)
+  }, [])
+
+  // Niet als PWA → installatiescherm
+  if (!isRunningAsPWA()) return <InstallPrompt deferredPrompt={deferredPrompt} />
 
   if (loading) return (
     <div style={{ minHeight: '100vh', background: '#F8F7F5', display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
