@@ -62,7 +62,7 @@ export default function HomePage() {
       {/* Vondst melden */}
       <div style={{ padding: '12px 14px 0' }}>
         <a
-          href="https://h-a-l.be"
+          href="https://loket.onroerenderfgoed.be/archeologie/metaaldetectievondstmeldingen"
           target="_blank"
           rel="noopener noreferrer"
           style={{
@@ -89,7 +89,7 @@ export default function HomePage() {
             </div>
             <div>
               <p style={{ fontSize: '15px', fontWeight: '800', color: 'white', margin: '0 0 2px', letterSpacing: '-0.2px' }}>
-                Vondsten
+                Vondst melden
               </p>
               <p style={{ fontSize: '12px', color: 'rgba(255,255,255,0.7)', margin: 0 }}>
                 Registreer via h-a-l.be
