@@ -12,6 +12,7 @@ import CategoryPage from './pages/CategoryPage'
 import PostPage from './pages/PostPage'
 import LoginPage from './pages/LoginPage'
 import MemberPage from './pages/MemberPage'
+import MobileAdmin from './pages/MobileAdmin'
 
 // Desktop pagina's
 import DesktopLogin from './pages/desktop/DesktopLogin'
@@ -88,6 +89,7 @@ function MobileApp() {
           <Route path="post/:id" element={<PostPage />} />
           <Route path="lid/:id" element={<MemberPage />} />
           <Route path="login" element={<LoginPage />} />
+          <Route path="admin" element={<MobileAdmin />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Route>
       </Routes>
