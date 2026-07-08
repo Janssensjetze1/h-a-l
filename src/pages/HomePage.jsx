@@ -105,7 +105,7 @@ export default function HomePage() {
           fontSize: '11px', fontWeight: '700', letterSpacing: '0.06em',
           textTransform: 'uppercase', color: '#a89e93', margin: '0 0 10px',
         }}>
-          Recente berichten
+          Recente berichten:
         </p>
 
         {loading ? (
